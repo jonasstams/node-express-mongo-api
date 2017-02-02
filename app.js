@@ -3,7 +3,10 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     logger = require('./src/config/logger'),
     routes = require('./src/config/routes'),
-    Book = require('./src/model/books');
+    Book = require('./src/model/books'),
+    cors = require('cors');
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({
     extended: true

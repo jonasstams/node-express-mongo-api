@@ -30,7 +30,7 @@ router.get('/:id', (req, res) =>{                                    // Route to
             res.status(400).json({success: false});                 // Send status 400 (BAD REQUEST)
         }
         if(book){
-            logger.info("Found book with _id: " + book._id + ".");
+            logger.info("Successfully found book.");
             res.status(200).json({success: true, book});            // Send the book
         }
     });
@@ -46,16 +46,17 @@ router.post('/', (req, res) => {                                    // Route to 
         const book = new Book({                                          // Create a new Book object from the Mongo model
             title: req.body.title,
             author: req.body.author,
-            ISBN: req.body.isbn
+            ISBN: req.body.ISBN
         });
 
         book.save((err, book) => {                                      // Save the book to Mongo
             if(err){
-                logger.error(err);
+                logger.error('Book.save', err);
                 res.status(400).json({success: false});                 // Send status 400 (BAD REQUEST)
-            }
-                logger.info("Successfully saved Book with new _id: " + book._id + ".");
+            }else{
+                logger.info("Successfully saved Book:", book );
                 res.status(201).json({success: true, book});            // Send the book back
+            }
         });
 
     }
