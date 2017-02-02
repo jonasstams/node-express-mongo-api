@@ -1,4 +1,12 @@
-const log4js = require('log4js');
+const log4js = require('log4js'),
+    fs = require('fs');
+
+fs.exists('logs/info.log', (exists) => {
+    if(!exists){
+        fs.writeFile('logs/info.log', (err) => {
+        })
+    }
+});
 
 log4js.configure({
     appenders: [
