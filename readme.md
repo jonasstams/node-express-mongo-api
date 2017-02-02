@@ -23,7 +23,7 @@ I made this project for myself to always have a starting API.
 }
 ```
 ## Log Example
-###### The logs are also saved in logs/info.log
+###### The console output is also saved in the file **console.log**
 ```
 [2017-02-02 18:48:05.606] [INFO] API - [ Connecting with MongoDB... ]
 [2017-02-02 18:48:05.673] [INFO] API - API started on http://localhost:3005

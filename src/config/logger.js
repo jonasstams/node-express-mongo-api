@@ -1,17 +1,16 @@
 const log4js = require('log4js'),
     fs = require('fs');
 
-fs.exists('logs/info.log', (exists) => {
+fs.exists('console.log', (exists) => {
     if(!exists){
-        fs.writeFile('logs/info.log', (err) => {
-        })
+        fs.writeFile('console.log', () => {});
     }
 });
 
 log4js.configure({
     appenders: [
         { type: 'console' },
-        { type: 'file', filename: 'logs/info.log', category: 'API' }
+        { type: 'file', filename: 'console.log', category: 'API' }
     ]
 });
 
