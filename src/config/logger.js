@@ -1,4 +1,4 @@
-var log4js = require('log4js');
+const log4js = require('log4js');
 
 log4js.configure({
     appenders: [
@@ -7,7 +7,7 @@ log4js.configure({
     ]
 });
 
-var logger = log4js.getLogger('API');
+const logger = log4js.getLogger('API');
 
 exports.info = (msg,object) => {
     object?

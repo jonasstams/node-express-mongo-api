@@ -22,20 +22,41 @@ I made this project for myself to always have a starting API.
     }
 }
 ```
+## Log Example
+###### The logs are also saved in logs/info.log
+```
+[2017-02-02 18:48:05.606] [INFO] API - [ Connecting with MongoDB... ]
+[2017-02-02 18:48:05.673] [INFO] API - API started on http://localhost:3005
+[2017-02-02 18:48:05.700] [INFO] API - Connection with MongoDB successful
+[2017-02-02 18:48:12.692] [INFO] API - [ Router triggered: GET /books/5893524e572c9764d733f946 ]
+[2017-02-02 18:48:12.694] [INFO] API - [ Searching for book with _id: 5893524e572c9764d733f946 ]
+[2017-02-02 18:48:12.719] [INFO] API - Found book with _id: 5893524e572c9764d733f946.
+[2017-02-02 18:48:17.739] [INFO] API - [ Router triggered: GET /books ]
+[2017-02-02 18:48:17.740] [INFO] API - [ Searching for books ]
+[2017-02-02 18:48:17.746] [INFO] API - Found 6 books.
+```
 
 
 ## Used Packages
 
-- express
-- mongoose
-- body-parser
-- log4j
+- Express
+- Mongoose
+- Body-parser
+- Log4j
+
+## Pre-Installation
+
+- [Node Package Manager (NPM)](https://www.npmjs.com/package/npm)
+- [MongoDb](https://www.mongodb.com/download-center#community)
 
 ## Installation
 
 ```
-- npm install
-- npm start
+- mongod        //Start mongo server
+- npm install   //Install node packages
+- npm start     //Start API
+
+//Maybe you have to change the JavaScript language to ECMAscript 6 in your Editor
 ```
 
 ## API Reference

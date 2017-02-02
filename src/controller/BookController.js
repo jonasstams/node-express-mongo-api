@@ -1,8 +1,6 @@
-var router = require('express').Router(),
+const router = require('express').Router(),
+    logger = require('./../config/logger'),
     Book = require('./../model/books');
-
-var logger = require('./../config/logger');
-
 
 router.get('/', (req, res) => {                                     // Route to get all Books
 
@@ -45,7 +43,7 @@ router.post('/', (req, res) => {                                    // Route to 
 
     if (req.body) {
 
-        var book = new Book({                                          // Create a new Book object from the Mongo model
+        const book = new Book({                                          // Create a new Book object from the Mongo model
             title: req.body.title,
             author: req.body.author,
             ISBN: req.body.isbn
@@ -56,7 +54,7 @@ router.post('/', (req, res) => {                                    // Route to 
                 logger.error(err);
                 res.status(400).json({success: false});                 // Send status 400 (BAD REQUEST)
             }
-                logger.info("Succesfully saved Book with new _id: " + book._id + ".");
+                logger.info("Successfully saved Book with new _id: " + book._id + ".");
                 res.status(201).json({success: true, book});            // Send the book back
         });
 

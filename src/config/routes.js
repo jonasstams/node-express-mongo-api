@@ -1,5 +1,5 @@
-var router = require('express').Router();
-var logger = require('./logger');
+const router = require('express').Router(),
+    logger = require('./logger');
 
 router.use((req, res, next) => {
     if(req.url != '/favicon.ico'){
@@ -9,7 +9,7 @@ router.use((req, res, next) => {
 });
 
 
-router.use('/books', require('./../controller/BookController'));
+router.use('/books', require('./../controller/bookController'));
 
 router.get('*', (req, res) => {
     logger.warn("Requested URL without route");
