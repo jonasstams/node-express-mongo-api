@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.use('/', routes);
 
-app.listen(3005, () => {
-    logger.info("API started on http://localhost:3005");
+app.listen(3006, () => {
+    logger.info("API started on http://localhost:3006");
 });
 

@@ -95,7 +95,7 @@ router.put('/:id', (req, res) => {                                      // Route
         } else {
             book.author = req.body.author ? req.body.author : book.author;
             book.title = req.body.title ? req.body.title : book.title;
-            book.ISBN = req.body.isbn ? req.body.isbn : book.ISBN;
+            book.ISBN = req.body.ISBN ? req.body.ISBN : book.ISBN;
 
 
             book.save((err, book) => {
